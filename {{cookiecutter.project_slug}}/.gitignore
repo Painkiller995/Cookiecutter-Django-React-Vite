@@ -278,4 +278,3 @@ dump.rdb
 .env
 .envs/*
 !.envs/.local/
-!.envs/.production/

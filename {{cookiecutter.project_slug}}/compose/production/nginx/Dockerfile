@@ -27,8 +27,22 @@ RUN npm run build
 # Stage 2: Serve the built frontend using Nginx
 FROM nginx:1.21.1-alpine
 
+# Create a non-root user
+RUN addgroup --system nginxuser \
+    && adduser --system --ingroup nginxuser nginxuser
+
+# Give necessary permissions to the non-root user
+RUN chown -R nginxuser:nginxuser /var/cache/nginx && \
+    chown -R nginxuser:nginxuser /var/log/nginx && \
+    chown -R nginxuser:nginxuser /etc/nginx/conf.d
+RUN touch /var/run/nginx.pid && \
+        chown -R nginxuser:nginxuser /var/run/nginx.pid
+
 # Copy only the built assets from the build stage to Nginx's HTML directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy Nginx configuration
 COPY ./compose/production/nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Switch to the non-root user
+USER nginxuser

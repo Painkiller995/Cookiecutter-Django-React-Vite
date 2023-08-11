@@ -1,0 +1,76 @@
+log:
+  level: DEBUG
+  filepath: "/etc/traefik/log/traefik.log"
+accesslog: true
+
+ping: true
+
+api:
+  dashboard: true
+  insecure: true
+  debug: true
+
+entryPoints:
+  web:
+    # http
+    address: ":80"
+
+  web-secure:
+    # https
+    address: ":443"
+  {%- if cookiecutter.use_celery == 'y' %}
+
+  flower:
+    address: ':5555'
+  {%- endif %}
+
+http:
+  routers:
+    web-secure-backend-router:
+      # all backend calls should be prefixed with services
+      # feel free to change it if you didn't like it
+      rule: "PathPrefix(`/services`)"
+      entryPoints:
+        - web
+        - web-secure
+      service: django
+    {%- if cookiecutter.use_celery == 'y' %}
+
+    flower-secure-router:
+      rule: "PathPrefix(`/`)"
+      entryPoints:
+        - flower
+      service: flower
+    {%- endif %}
+
+    # frontend
+    web-secure-frontend-router:
+      rule: "PathPrefix(`/`)"
+      entryPoints:
+        - web
+        - web-secure
+      service: node
+
+  services:
+    django:
+      loadBalancer:
+        servers:
+          - url: http://django:8000
+    {%- if cookiecutter.use_celery == 'y' %}
+
+    flower:
+      loadBalancer:
+        servers:
+          - url: http://flower:5555
+    {%- endif %}
+    
+    node:
+      loadBalancer:
+        servers:
+          - url: http://node:3000
+
+providers:
+  # https://docs.traefik.io/master/providers/file/
+  file:
+    filename: /etc/traefik/traefik.yml
+    watch: true

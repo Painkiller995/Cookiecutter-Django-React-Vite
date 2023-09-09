@@ -82,4 +82,4 @@ If you're not working with React, no worries! The frontend is separated and not 
 
 ## License 📄
 
-This project is licensed under the [MIT License](LICENSE).
+This project is governed by the terms and conditions specified in the [License](LICENSE) file.

@@ -1,19 +1,19 @@
 {%- if cookiecutter.use_whitenoise == 'y' %}
-whitenoise==6.5.0  # https://github.com/evansd/whitenoise
+whitenoise==6.6.0  # https://github.com/evansd/whitenoise
 {%- endif %}
-redis==4.6.0  # https://github.com/redis/redis-py
-hiredis==2.2.3  # https://github.com/redis/hiredis-py
+redis==5.0.1  # https://github.com/redis/redis-py
+hiredis==2.3.2  # https://github.com/redis/hiredis-py
 {%- if cookiecutter.use_celery == "y" %}
-celery==5.3.1  # pyup: < 6.0  # https://github.com/celery/celery
+celery==5.3.6  # pyup: < 6.0  # https://github.com/celery/celery
 django-celery-beat==2.5.0  # https://github.com/celery/django-celery-beat
-flower==2.0.0  # https://github.com/mher/flower
+flower==2.0.1  # https://github.com/mher/flower
 {%- endif %}
 
 
 # Django
 # ------------------------------------------------------------------------------
-django==4.2.4
-django-environ==0.10.0
-django-redis==5.3.0  # https://github.com/jazzband/django-redis
+django==4.2.9 # https://www.djangoproject.com/
+django-environ==0.11.2  # https://github.com/joke2k/django-environ
+django-redis==5.4.0  # https://github.com/jazzband/django-redis
 # Django REST Framework
-djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework 
+djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework

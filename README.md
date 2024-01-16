@@ -71,6 +71,15 @@ For local development and deployment instructions, refer to:
 
 - [Developing Locally using Docker](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html) (based on django-cookiecutter documentation)
 
+## Frontend and Backend Routes
+
+By default, this project is configured with the following routes:
+
+- Accessing the root URL ("/") will direct you to the frontend.
+- Accessing "/services" will direct you to the backend.
+
+Feel free to customize these routes based on your project requirements.
+
 ## Not a React developer?
 
 If you're not working with React, no worries! The frontend is separated and not tightly coupled to the backend. Feel free to delete the content of the frontend folder and use your favorite Vite template. Just make sure to use the same commands in the package.json file for "dev" and "build".

@@ -1,3 +1,4 @@
+import logging
 from .base import *  # noqa
 from .base import env
 
@@ -50,6 +51,13 @@ if env("USE_DOCKER") == "yes":
 
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS += [".".join(ip.split(".")[:-1] + ["1"]) for ip in ips]
+
+    # Add Traefik IP address
+    try:
+        traefik_ip = socket.gethostbyname("traefik")
+        INTERNAL_IPS.append(traefik_ip)
+    except socket.gaierror as e:
+        logging.warning(f"Unable to resolve 'traefik' hostname: {e}")
 
 # django-extensions
 # ------------------------------------------------------------------------------

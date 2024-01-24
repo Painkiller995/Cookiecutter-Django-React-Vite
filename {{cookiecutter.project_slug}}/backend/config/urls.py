@@ -48,3 +48,7 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+# Add 'prefix' to all urlpatterns
+if settings.URL_PREFIX:
+    urlpatterns = [path(f"{settings.URL_PREFIX}/", include(urlpatterns))]

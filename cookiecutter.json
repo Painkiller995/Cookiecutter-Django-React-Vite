@@ -15,6 +15,7 @@
   ],
   "timezone": "UTC",
   "postgresql_version": ["15", "14", "13", "12", "11", "10"],
+  "use_drf": "n",
   "use_celery": "n",
   "use_whitenoise": "y",
   "debug": "n"

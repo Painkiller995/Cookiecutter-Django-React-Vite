@@ -186,6 +186,10 @@ def remove_celery_compose_dirs():
     shutil.rmtree(os.path.join("compose", "production", "django", "celery"))
 
 
+def remove_drf_starter_files():
+    os.remove(os.path.join("backend", "config", "api_router.py"))
+
+
 def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
@@ -206,6 +210,9 @@ def main():
     if "{{ cookiecutter.use_celery }}".lower() == "n":
         remove_celery_files()
         remove_celery_compose_dirs()
+
+    if "{{ cookiecutter.use_drf }}".lower() == "n":
+        remove_drf_starter_files()
 
     print("Project initialized, keep up the good work!")
 

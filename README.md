@@ -24,6 +24,7 @@ Encountering issues with Cookiecutter Django? Don't hesitate to [open an issue](
 - Flexibility galore: Tailor your PostgreSQL version 🐘
 - Optionally serves static files via Whitenoise (Optional) 🌐
 - Supports Celery and Flower configurations (Optional) 🌸
+- Django Rest Framework (Optional): Easily integrate a powerful API framework for building Web APIs 🌐
 
 ### Frontend
 
@@ -86,8 +87,7 @@ If you're not working with React, no worries! The frontend is separated and not 
 
 ## What's on the Horizon
 
-- Adding Django Rest Framework (Optional Feature) 🌐
-- Incorporating Djoser (Optional Feature) 🔐
+- Incorporating django-allauth/Djoser (Optional Feature) 🔐
 
 ## License 📄
 

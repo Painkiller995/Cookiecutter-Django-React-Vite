@@ -3,6 +3,9 @@
 Discover the Magic of Next.js and Server-Side Rendering!
 Explore [Cookiecutter-Django-React-Nextjs-Vite](https://github.com/Painkiller995/Cookiecutter-Django-React-Nextjs-Vite) – a perfect blend of Django and React, now with the enchantment of Next.js or Vite!
 
+Looking for a customizable Next.js template with authentication pages, custom layouts, dark mode, and more?
+Check out [Shadcn/ui - Next.js Template](https://github.com/Painkiller995/Shadcnui-Next.js-Template).
+
 🍪❤️ A Refreshing Twist on Cookiecutter Django 🍪❤️
 
 Cookiecutter-Django-React-Vite empowers you to rapidly kickstart production-ready Django projects with a frontend, all thanks to the magic of Cookiecutter. Drawing significant inspiration from [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django).

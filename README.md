@@ -1,5 +1,8 @@
 # Cookiecutter Django React Vite
 
+Discover the Magic of Next.js and Server-Side Rendering!
+Explore [Cookiecutter-Django-React-Nextjs-Vite](https://github.com/Painkiller995/Cookiecutter-Django-React-Nextjs-Vite) – a perfect blend of Django and React, now with the enchantment of Next.js or Vite!
+
 🍪❤️ A Refreshing Twist on Cookiecutter Django 🍪❤️
 
 Cookiecutter-Django-React-Vite empowers you to rapidly kickstart production-ready Django projects with a frontend, all thanks to the magic of Cookiecutter. Drawing significant inspiration from [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django).
@@ -92,3 +95,7 @@ If you're not working with React, no worries! The frontend is separated and not 
 ## License 📄
 
 This project is governed by the terms and conditions specified in the [License](LICENSE) file.
+
+**Project Visitors**
+
+![Project Visitors](https://profile-counter.glitch.me/Cookiecutter-Django-React-Vite/count.svg)

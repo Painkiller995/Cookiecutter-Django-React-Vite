@@ -1,5 +1,5 @@
 # Use an official node runtime as a parent image
-FROM node:18-bullseye-slim
+FROM node:22-bookworm-slim
 
 # Install apt packages if needed (add package names if required)
 RUN apt-get update && apt-get install --no-install-recommends -y

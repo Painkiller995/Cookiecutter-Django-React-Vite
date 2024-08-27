@@ -1,6 +1,6 @@
 # Stage 1: Build the frontend
 # Use an official node runtime as a parent image
-FROM node:18-bullseye-slim AS build
+FROM node:22-bookworm-slim AS build
 
 # Install apt packages if needed (add package names if required)
 RUN apt-get update && apt-get install --no-install-recommends -y
@@ -25,7 +25,7 @@ COPY frontend/ ${APP_HOME}
 RUN npm run build
 
 # Stage 2: Serve the built frontend using Nginx
-FROM nginx:1.21.1-alpine
+FROM nginx:1.17.8-alpine
 
 # Create a non-root user
 RUN addgroup --system nginxuser \
